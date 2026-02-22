@@ -49,6 +49,20 @@ class DetailScreen extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          print('compartiendo: ${article.title}');
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Enlace copiado en porta papeles: ${article.title}',
+              ),
+            ),
+          );
+        },
+        label: Text('Compartir'),
+        icon: Icon(Icons.share),
+      ),
     );
   }
 }
